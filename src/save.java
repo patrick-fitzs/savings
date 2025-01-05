@@ -13,6 +13,8 @@ public class save {
         double salary = scan.nextDouble();
         System.out.println("You earn " + salary + "p/h");
 
+
+
         //ASK FOR AVERAGE HOURS
         System.out.println("How many hours will you work per day on average");
         double averageHours = scan.nextDouble();
@@ -64,9 +66,12 @@ public class save {
     {
         double totalHours = daysworked * averageHours;
         double total =  salary * totalHours;
+        double totalBeforeTax = (total);
         double totalAfterTax = (total/100)*83.28;
-        return "You will earn "+total+" before tax and " + totalAfterTax+" after tax if you work "+ averageHours+" hours per day";
-
+        return String.format(
+                "You will earn %.2f before tax and %.2f after tax if you work %.2f hours per day",
+                totalBeforeTax, totalAfterTax, averageHours
+        );
     }
 
 
